@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.5 on win32)" generated="20210524 18:43:28.746" rpa="false">
+<suite id="s1" name="Excel Extended" source="C:\Users\pawarsi\PycharmProjects\API_ROBOT\excel_extended.robot">
+<test id="s1-t1" name="TC_Fetch Data from Excell">
+<kw name="Open given Excel file">
+<arguments>
+<arg>${sFileName}</arg>
+</arguments>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>OperatingSystem.File Should Exist</arg>
+<arg>${sFileName}</arg>
+</arguments>
+<assign>
+<var>${inputfileStatus}</var>
+<var>${msg}</var>
+</assign>
+<kw name="File Should Exist" library="OperatingSystem">
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<arguments>
+<arg>${sFileName}</arg>
+</arguments>
+<msg timestamp="20210524 18:43:29.352" level="FAIL">File 'C:\Users\pawarsi\PycharmProjects\API_ROBOTDataTestSheet.xls' does not exist.</msg>
+<status status="FAIL" starttime="20210524 18:43:29.351" endtime="20210524 18:43:29.352"></status>
+</kw>
+<msg timestamp="20210524 18:43:29.352" level="INFO">${inputfileStatus} = FAIL</msg>
+<msg timestamp="20210524 18:43:29.352" level="INFO">${msg} = File 'C:\Users\pawarsi\PycharmProjects\API_ROBOTDataTestSheet.xls' does not exist.</msg>
+<status status="PASS" starttime="20210524 18:43:29.351" endtime="20210524 18:43:29.352"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${inputfileStatus}"=="PASS"</arg>
+<arg>info</arg>
+<arg>${sFileName} Test data file exist</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Cannot locate the given Excel file.</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>Cannot locate the given Excel file.</arg>
+</arguments>
+<msg timestamp="20210524 18:43:29.353" level="FAIL">Cannot locate the given Excel file.</msg>
+<status status="FAIL" starttime="20210524 18:43:29.352" endtime="20210524 18:43:29.353"></status>
+</kw>
+<status status="FAIL" starttime="20210524 18:43:29.352" endtime="20210524 18:43:29.353"></status>
+</kw>
+<status status="FAIL" starttime="20210524 18:43:29.351" endtime="20210524 18:43:29.353"></status>
+</kw>
+<doc>Fetching the data from given Row and Column Name</doc>
+<status status="FAIL" starttime="20210524 18:43:29.350" endtime="20210524 18:43:29.353" critical="yes">Cannot locate the given Excel file.</status>
+</test>
+<status status="FAIL" starttime="20210524 18:43:28.747" endtime="20210524 18:43:29.355"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="Excel Extended">Excel Extended</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
